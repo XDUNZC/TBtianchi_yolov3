@@ -1,6 +1,2 @@
-*
-!.gitignore
-!*.sh
-!custom/
-!samples/
-!coco.names
+!not_important
+!classes.name
