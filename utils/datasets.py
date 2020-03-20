@@ -62,7 +62,8 @@ class ListDataset(Dataset):
             self.img_files = file.readlines()
 
         self.label_files = [
-            path.replace("images", "labels").replace(".png", ".txt").replace(".jpg", ".txt")
+            # path.replace("images", "labels").replace(".png", ".txt").replace(".jpg", ".txt")
+            path.replace("JPEGImages", "labels").replace(".png", ".txt").replace(".jpg", ".txt")
             for path in self.img_files
         ]
         self.img_size = img_size
@@ -123,7 +124,8 @@ class ListDataset(Dataset):
 
             targets = torch.zeros((len(boxes), 6))
             targets[:, 1:] = boxes
-
+        else:
+            raise Exception("None label_path",label_path)
         # Apply augmentations
         if self.augment:
             if np.random.random() < 0.5:
