@@ -2,7 +2,7 @@ numpy
 torch>=1.0
 torchvision
 matplotlib
-tensorflow-gpu==1.14
+tensorflow-gpu==2.5.1
 tensorboard
 terminaltables
 pillow
